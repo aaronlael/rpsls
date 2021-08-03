@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul {
+                text-align: center;
+                list-style-position: inside;
+                }
+            .btn {
+              border: none;
+              background-color: inherit;
+              padding: 14px 28px;
+              font-size: 16px;
+              cursor: pointer;
+              display: inline-block;
+            }
+
+            .btn:hover {background: #eee;}
+
+            .success {color: green;}
+            .info {color: dodgerblue;}
+            .warning {color: orange;}
+            .danger {color: red;}
+            .default {color: black;}
+        </style>
+    </head>
+    <body>
+        <table style="width:100%">
+            <tr>
+                <td style="text-align:center">
+                    <form method="POST">
+                        <h1>rock, paper, scissors, lizard, spock...</h1>
+                        <button class="btn default" id="rock" type="submit" name="text" value="rock">🤘Rock🤘 </button>
+                        <button class="btn default" id="paper" type="submit" name="text" value="paper">📄Paper📄</button>
+                        <button class="btn default" id="scissors" type="submit" name="text" value="scissors">✂️Scissors✂️</button>
+                        <button class="btn default" id="lizard" type="submit" name="text" value="lizard">🦎Lizard🦎</button>
+                        <button class="btn default" id="spock" type="submit" name="text" value="spock">🖖Spock🖖</button>
+                        <br>
+                        {% if res %}
+                            <h1>{{ res }}</h1>
+                        {% endif %}
+                    </form>
+                </td>
+                <td style="text-align:center">
+                    <h1>Statistics</h1>
+                    <ul id="stats">
+                        {% for out in output %}
+                            <li>{{ out }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td style="text-align:center">
+                    <h1>History</h1>
+                    <ul id="navigation">
+                        {% for item in hist %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td style="text-align:center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/x5Q6-wMx-K8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
