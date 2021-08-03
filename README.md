@@ -5,9 +5,15 @@ A basic flask app using mysql as the db to store historical stats on outcomes.
 
 mysite
  -> flaskapp.py
+ 
  -> config.py
+ 
  -> templates
+ 
    -> template.html
+   
  -> model
+ 
    -> modcfg.py
+   
    -> model.py
